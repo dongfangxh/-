@@ -1,0 +1,40 @@
+<!-- 这是一个简单计算器的界面 -->
+<%@ page contentType="text/html;charset=gb2312"%>
+
+<html>
+    <!-- 添加javascript代码，检验输入 -->
+
+    <head>
+        <script language="javascript">
+            //判断输入是否为空
+            function checkNum()
+            {
+                if(input.num1.value=="")
+                {
+                    window.alert("num1,不能为空");
+                    return false;
+                }
+                if(Math.round(input.num1.value)!=input.num1.value)
+                {
+                    window.alert("num1,不是一个数");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+​    <body>
+​        <h1>我的计算器</h1>
+​        <form action="myResult.jsp" name="input">
+​            请输入第一个数：<input type="text" name="num1"/><br/>
+​            <select name="flag">
+​                <option value=+>+</option>
+​                <option value=->-</option>
+​                <option value=*>*</option>
+​                <option value=/>/</option>
+​            </select><br/>
+​            请输入第二个数：<input type="text" name="num2"/><br/>
+​            <input type="submit" value="计算" onclick="return checkNum()" ></input>
+​        </form>
+​    </body>
+</html>
+

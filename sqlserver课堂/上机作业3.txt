@@ -1,0 +1,31 @@
+/*1.	给学生表的学号列增加主键约束。* /
+USE 学生管理
+ALTER TABLE 学生表
+ADD CONSTRAINT PK_XUEHAO PRIMARY KEY(学号)
+
+/*2.	给学生表的姓名列增加唯一约束。*/
+ALTER TABLE 学生表
+ADD CONSTRAINT UQ_XINGMING UNIQUE(姓名)
+
+/*3.	给学生表的性别列增加默认约束，默认值为男。*/
+ALTER TABLE 学生表
+ADD  CONSTRAINT DF_XINGBIE DEFAULT '男' FOR 性别
+
+/*4.	给学生表的入学成绩列增加检查约束，限制入学成绩的取值范围为300分以上。*/
+ALTER TABLE 学生表
+ADD CONSTRAINT CK_CHENGJI CHECK(入学成绩>300)
+
+/*5.	给学生表的性别列设置检查约束，限制性别列只能取 “男”或“女”。*/
+ALTER TABLE 学生表
+ADD  CONSTRAINT CK_性别 CHECK(性别='男' OR 性别='女')
+
+/*7.	给成绩表添加外键约束，限制成绩表的学号只能取学生表中存在的学号值*/
+ALTER TABLE 成绩表  ADD
+CONSTRAINT FK_XUEHAO FOREIGN KEY(学号) REFERENCES 学生表(学号)
+
+/*8.成绩表的课程编号只能取课程表的课程编号值。*/
+
+
+
+
+

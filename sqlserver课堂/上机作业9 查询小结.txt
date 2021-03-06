@@ -1,0 +1,117 @@
+一、
+现有关系数据库如下：
+数据库名：“学生－课程”数据库
+学生表(学号 char(6)，姓名，性别，民族，年龄) 
+课程表(课程号 char(6)，课程名) 
+成绩表(学号，课程号,成绩) 
+利用T-SQL语句完成下列操作：
+1．建立学生表。要求：主键(学号) 、默认(民族)、非空(姓名)、检查(性别)。
+2．查询年龄在20至23岁之间的学生的姓名、民族、和年龄
+3．将少数民族（不是汉族）的学生的成绩置为88分。
+4．查询汉族所有男生的姓名、课程名和成绩，并按成绩降序排序。
+
+1．	建立学生表。要求：主键(学号) 、默认(民族)、非空(姓名)、检查(性别)。
+CREATE TABLE 学生表
+（ 学号 char(6) primary key,
+   姓名 varchar(10) not null,
+   性别 char(2) CHECK （性别 in （‘男’，‘女’）），
+   民族  varchar(10) default ‘汉’，
+   年龄  tinyint ）
+2．	查询年龄在20至23岁之间的学生的姓名、民族、和年龄。
+SELECT 姓名，民族，年龄 FROM 学生表  WHERE 年龄 BETWEEN 20 AND 23
+3．	将少数民族的全体学生的成绩置为88分。
+UPDATE 成绩表 SET 成绩=88
+ WHERE 学号 IN (SELECT 学号 FROM 学生表 WHERE 民族<>‘汉’)
+4. 查询汉族所有男生的姓名、课程名和成绩，并按成绩降序排序。
+   SELECT 姓名，课程名，成绩
+   FROM  学生表,成绩表,课程表
+   WHERE学生表.学号=成绩表.学号and成绩表.课程号=课程表.课程号and民族=‘汉’and 性别=‘男’
+   ORDER BY 成绩 DESC
+
+
+
+
+
+
+
+二、
+现有教师数据库如下：
+教师表(教师编号 char(6)，姓名，性别，民族，职称) 
+课程表(课程代码 char(6)，课程名称) 
+任课表(ID，教师编号,课程代码，课时数) 
+利用T-SQL语句完成下列操作：
+
+1．建立教师表。
+要求：主键(教师编号) 、默认(民族)、检查(性别)。
+2．将信息(课程代码“100001”, 课程名称“SQL 2008”) 插入到课程表。
+3．修改课程代码为100003的课程名称为：VB程序设计。
+4．查询所有张姓教师的教师编号、姓名、所任课程代码、课时数。
+5．建一个视图view_1，显示职称为教授的女教师的教师编号和姓名。
+
+
+
+1．利用T-SQL语句，按要求建立教师表。
+CREATE table 教师表
+ ( 教师编号 char(6)  primary  key ,
+姓名     nchar(10)  not null ,
+性别     char(2)   check(性别 in(’男’,’女’)),
+民族     nchar(10)  default  ‘汉族’,
+职称     nchar（8）)
+2．利用T-SQL语句，将下列课程信息添加到课程表。
+Insert  into 课程表 
+values (‘100001’,’SQL 2008’)
+3．修改课程代码为100003的课程名称为：Visual Basic程序设计。
+Update 课程表 
+Set 课程名=’Visual Basic 程序设计’ 
+Where 课程代码=’100003’
+４查询所有张姓教师的教师编号、姓名、所任课程代码、课时数。
+SELECT 教师编号,姓名，课程代码，课时数
+FROM  教师表 INNER JOIN 任课表  ON 教师表.教师编号=任课表.教师编号
+WHERE 姓名 LIKE  ‘张%’	
+5．CREATE VIEW view_1  AS
+Select 教师编号，姓名 from 教师表 where 职称=‘教授’and 性别=‘女’
+
+
+
+
+
+
+三、
+利用T-SQL语句创建关系数据库如下：
+数据库名：“学生管理”
+该数据库有一个名为Student.mdf的主数据文件和名为Student_log.ldf的事务日志文件。主数据文件：大小4MB，最大20MB，增长量10%；事务日志文件：大小2MB，最大80MB，增长量1MB。
+完成下列操作：
+1.	按要求创建数据库，将数据库保存在D盘的根目录下。
+2.	建立学生表，并按照要求添加约束。
+学号设置为主键，民族设置默认值为汉；姓名不允许为空。
+3.	修改上述表，给性别列添加约束，限制性别列的值只能取“男”或“女”。
+4.	给各表格插入各增加三条记录，数据自选。
+1.
+CREATE DATABASE 学生管理
+ON
+(NAME=Student,
+FILENAME='D:\Student.mdf',
+SIZE=4MB,
+MAXSIZE=20MB,
+FILEGROWTH=10%)
+LOG ON
+(NAME=Student_log,
+FILENAME='D:\Student_log.ldf',
+SIZE=2MB,
+MAXSIZE=80MB,
+FILEGROWTH=1MB)
+
+2.
+CREATE TABLE 学生表
+（ 学号 varchar(10) primary key,
+ 姓名 nvarchar(10) not null,
+ 性别 nchar(1)，
+ 民族  varchar(10) default ‘汉’）
+3.
+alter table 学生表
+add constraint ck_ssex check(性别 in('男','女'))
+4.
+INSERT INTO 学生表 VALUES
+('001','张三','男',default),
+('002','李四','女',default),
+('003','王五','男',default)
