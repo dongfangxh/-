@@ -1,0 +1,33 @@
+/*1. 查询学生表中入学成绩的最大值、最小值、平均值。*/
+USE 学生管理
+SELECT MAX(入学成绩) AS 最高分, MIN(入学成绩) AS 最低分, AVG(入学成绩) AS 平均分
+FROM 学生表
+
+/*2. 查询学生表中的学生人数。*/
+SELECT COUNT(*) 人数
+FROM 学生表
+
+/*3. 查询学生表中的男生人数。*/
+SELECT COUNT(*) 人数
+FROM 学生表
+WHERE 性别='男'
+
+/*4. 查询学生表中出生年份的个数。*/
+SELECT COUNT(DISTINCT YEAR(出生日期)) AS 年份个数
+FROM 学生表
+
+/*5. 分组统计查询学生表中男女生的人数。*/
+SELECT 性别,COUNT(*) 人数
+FROM 学生表
+GROUP BY 性别
+
+/*6. 分组查询不同年份出生的学生人数。*/
+SELECT YEAR(出生日期) 出生年份,COUNT(*) 人数
+FROM 学生表
+GROUP BY YEAR(出生日期)
+
+/*7. 分组查询人数大于等于2的不同年份出生的学生人数。*/
+SELECT YEAR(出生日期) 出生年份,COUNT(*) 人数
+FROM 学生表
+GROUP BY YEAR(出生日期)
+HAVING COUNT(*)>=2

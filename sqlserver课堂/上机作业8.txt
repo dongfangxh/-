@@ -1,0 +1,62 @@
+/*1.分组统计查询学生表中男女生的最高入学成绩。*/
+USE 学生管理
+SELECT 性别,MAX(入学成绩) AS 最高分
+FROM 学生表
+GROUP BY 性别
+
+/*2.查询比杨洋同学入学成绩低的学生信息。*/
+SELECT *
+FROM 学生表
+WHERE 入学成绩 < (SELECT 入学成绩
+                 FROM 学生表
+                 WHERE 姓名='杨洋')
+                 
+/*3.查询刘明明选修的课程号和成绩。*/
+SELECT 课程号,成绩
+FROM  成绩表
+WHERE 学号 = (SELECT 学号
+             FROM 学生表
+             WHERE 姓名='刘明明')
+/*3.查询刘明明选修的课程号和成绩。*/
+SELECT 课程号,成绩
+FROM  学生表 INNER JOIN 成绩表
+ON 学生表.学号 = 成绩表.学号
+WHERE 姓名='刘明明'
+/*4.查询选修了课程的学生姓名、性别和出生日期。*/
+SELECT 姓名,性别,出生日期
+FROM 学生表
+WHERE 学号 IN (SELECT 学号
+               FROM 成绩表)
+
+/*5.查询比平均入学成绩高的学生姓名与入学成绩。*/
+SELECT 姓名,入学成绩
+FROM  学生表
+WHERE 入学成绩 > (SELECT AVG(入学成绩)
+                 FROM 学生表)
+/*6.查询选修了330109课程的学生姓名，课程号与成绩。*/
+SELECT 姓名,课程号,成绩
+FROM 学生表 INNER JOIN 成绩表
+ON 学生表.学号 = 成绩表.学号
+WHERE 课程号='330109'
+
+/*7.查询选修了网络营销课程的学生学号、课程名与成绩。*/
+SELECT 学号,课程名,成绩
+FROM 成绩表 INNER JOIN 课程表
+ON 成绩表.课程号 = 课程表.课程号
+WHERE 课程名='网络营销'
+
+/*8.查询显示每个学生的平均成绩。*/
+SELECT 姓名,AVG(成绩) AS 平均成绩
+FROM 学生表 LEFT JOIN 成绩表
+ON 学生表.学号 = 成绩表.学号
+GROUP BY 姓名
+/*9.查询成绩大于80分的学生的姓名、课程号与成绩。*/
+SELECT 姓名,课程号,成绩
+FROM 学生表 INNER JOIN 成绩表
+ON 学生表.学号 = 成绩表.学号
+WHERE 成绩 > 80
+/*10.查询没有选修课程的学生姓名。*/
+SELECT 姓名,性别,出生日期
+FROM 学生表
+WHERE 学号 NOT IN (SELECT 学号
+               FROM 成绩表)
