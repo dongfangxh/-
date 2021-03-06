@@ -1,0 +1,33 @@
+初级拓展
+1、了解参加的Web服务架构
+        1）搜集流行的Web服务端架构，参考：
+             Windows server  : IIS     +     ASP(.NET)    +  SQL Server          .NET
+	     Linux           : Apache  +      PHP         +  MySQL               LAMP
+	     UNIX/Windows    : Tomcat  +      JSP         +  Oracle              J2EE	
+        2）整理和了解这些Web架构各自的特点。
+
+2、安装XAMPP开发环境
+        下载地址：https://www.apachefriends.org/zh_cn/index.html 。
+
+
+
+
+高级拓展
+1、安装tomcat环境，在网站目录下新建一个测试页面index.jsp
+内容为：
+<html>
+    <head>
+        <title>
+            My first Tomcat!
+        </title>
+    </head>
+    <body>
+        <center>
+            Now time is:
+            <%=new java.util.Date()%>
+        </center>
+    </body>
+</html>
+要求正常显示页面。
+
+2、尝试部署初级扩展中提到的几种Web架构。

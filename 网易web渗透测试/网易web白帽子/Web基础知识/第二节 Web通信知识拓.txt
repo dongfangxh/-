@@ -1,0 +1,24 @@
+初级拓展
+1、 熟悉常见浏览器协议
+        1）学习ftp、https、file三种协议：列出每一种协议的具体说明；
+        2）在浏览器中使用这3种类协议访问资源：了解访问结果（包括协议类型和资源），自行整理成笔记。
+
+2、熟悉HTTP
+        1） 熟悉HTTP报文；
+            A、学习HTTP请求报文中的请求方式：GET、POST、HEAD、PUT、DELETE、MOVE、OPTIONS、TRACE的意义，给出总结列表及用法；
+            B、了解返回报文中常见状态码1XX--5XX的大致含义；
+            C、了解请求报文中User-Agent、Host、Cookie、X-Frame-Options和返回包中server、Set-Cookie、 Content-Type、httponly属性的含义；
+        2）了解Base64编码；
+        3）熟悉HTTP基本认证。
+
+
+
+高级拓展
+1、 简述HTTPS和HTTP的区别和联系
+        学习http://blog.csdn.net/whatday/article/details/38147103内容；
+        了解跟HTTPS相关的CA证书、SSL的概念。
+
+2、系统掌握HTTP协议知识
+        学习《HTTP权威指南》 （内容比较全面，需要一定时间），见页面底部附件。
+
+

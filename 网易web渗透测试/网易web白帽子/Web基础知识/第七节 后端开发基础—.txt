@@ -1,0 +1,25 @@
+初级拓展
+1、测验
+        完成http://www.w3school.com.cn/quiz/quiz.asp?quiz=php测验；
+
+2、学习编码相关函数
+        熟悉php的编码和解码函数，自编php代码运行如下函数：
+            ASCII: ord()和chr()
+            URL：urlencode()和 urldecode()
+            Base64: ase64_encode()和base64_decode()
+            HTML实体：htmlspecialchars()和htmlspecialchars_decode()
+            其他：str_replace()、md5()等
+3、学习并进行练习
+        1）练习并运行http://www.phpxs.com/post/4427/,的四组代码；
+        2）了解php序列化的意义和方法。
+
+
+
+
+高级拓展
+1、环境搭建
+        在phpstudy中搭建WordPress个人博客。下载地址 https://cn.wordpress.org/ ；
+
+2、学习PHP的mysql 参数绑定
+        1）掌握参数绑定的方法以及进行参数绑定的原因；
+        2）实验：将课程中学习的teacher数据表，绑定id和addr；进行查询工作，自行编写运行代码。

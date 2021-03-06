@@ -1,0 +1,25 @@
+初级拓展
+1、测验
+        完成测验：http://www.w3school.com.cn/quiz/quiz.asp?quiz=html 。
+
+2、实践
+        完成实例：http://www.runoob.com/html/html-examples.html 中的“HTML实例”；在运行实验代码时，需要了解其含义，并尝试修改每一个实例相关的元素（标签、属性、内容）。
+
+3、了解HTML实体
+        1）了解HTML实体：
+            http://www.runoob.com/html/html-entities.html
+            http://www.runoob.com/tags/ref-entities.html
+        2）掌握HTML预留字符：
+            即<、>、“、‘、&的实体编码和实体名称。
+
+
+
+
+高级拓展
+1、熟悉HTML的常见的事件属性
+        1）了解on属性：如onerror、onload、onclick、onchange、onfocus、oninput、onmousemove、onsubmit、onkeydown；
+        2）参考http://www.w3school.com.cn/tags/html_ref_eventattributes.asp 中属性的“亲自试一试”，让上述1）中属性执行alert(1)。
+
+    2、源码阅读
+        查看《Web安全工程师》微专业课程的页面源码，阅读HTML源码。
+

